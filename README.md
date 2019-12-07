@@ -74,4 +74,4 @@ path/*| Caractere coringa, representa qualquer coisa.
 		$controller->setPath("lista-produtos.php,'produtos');
 		$controller->setPath("produto.php","produto/*");
 		$controller->processPaths();
-		$controller->includeFile("includeFile.php");
+		$controller->includeFile("footer.php");
