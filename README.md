@@ -50,13 +50,9 @@ Ao final do cadastro das URLS, é necessário executar a função que dá inicio
 
 ## Variáveis de Paths
 
-|Tipo | Descrição|
-|--|--|
-|path/path2 | Acessa o arquivo.php quando a URL for igual a path/path2  |
-
 
 | Tipo | Descrição |
-|--|--|--|
+|--|--|
  path/path2 | Acessa o arquivo.php quando a URL for igual a path/path2  |
  path/a\|b\|c| Acessa o arquivo.php quando a URL for igual a **path/a** ou **path/b** ou **path/c**   |
 path/^teste | Acessa o arquivo.php quando a URL for diferente de path/teste
