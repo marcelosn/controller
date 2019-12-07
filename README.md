@@ -66,7 +66,7 @@ path/*| Caractere coringa, representa qualquer coisa.
 		$controller = new Controller();
 		$controller->setRoot(__DIR__);
 		$controller->initPath("pagina-inicial");
-		$controller->set404	("erro404.php");
+		$controller->set404("erro404.php");
 		$controller->ignoreAdd();
 		$controller->includeFile("head.php");
 		$controller->includeFile("header.php");
