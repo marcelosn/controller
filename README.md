@@ -3,51 +3,59 @@ Classe em PHP simples para você controlar as rotas do seu website/sistema.
 
 ## Instalação
 Inclua o arquivo da classe e inicie:
-
+```php 
 	include("./controller.class.php");
 	$controller = new Controller();
-
+```
 	
 ## Configuração simples
 
-	//Diretório ROOT padrão dos includes
-	$controller->setRoot(__DIR__);
-	
-	//Caso não exista URL no Browser redireciona para: 
-	$controller->initPath("pagina-inicial");
-	
-	//Caso não exista URL setamos o arquivo erro404: 
-	$controller->set404	("erro404.php");
+```php   
+<?
 
- ## Ignorando paths finais
+	//Diretório ROOT padrão dos includes
+    $controller->setRoot(__DIR__);
+    
+    //Caso não exista URL no Browser redireciona para: 
+    $controller->initPath("pagina-inicial");
+    
+    //Caso não exista URL setamos o arquivo erro404: 
+    $controller->set404	("erro404.php");
+?>
+```
+
+## Ignorando paths finais
 ex:	
 URL cadastrada = a/b
 URL do browser = a/b/c/d/e/f
 Sistema leva em consideração a primeira combinação
-
+```php
 	$controller->ignoreAdd();
-
+```
 ## Incluindo arquivos fixos
 
+```php
 	$controller->includeFile("includeFile.php");
-
+```
 ## Setando os paths (arquivo,path)
+```php
 	$controller->setPath("inicio.php","pagina-inicial");
 	$controller->setPath("produtos.php""produtos");
-
+```
 
 ### Usando um arquivo pré processador
 Podemos direcionar tudo para um arquivo que processará tudo dessa maneira
-	
+```php	
 	$controller->setPath("desktop.php?path=prod""produtos");
 	$controller->setPath("desktop.php?path=qs""quem-somos");
 	$controller->setPath("desktop.php?path=init""inicio");
-
+```
 ## Processando os paths
 Ao final do cadastro das URLS, é necessário executar a função que dá inicio a tudo:
 
+```php
 	$controller->processPaths();
-
+```
 ## Variáveis de Paths
 
 
@@ -61,17 +69,18 @@ path/*| Caractere coringa, representa qualquer coisa.
 
 # EXEMPLO DE USO:
 
-	<?
-		include("./controller.class.php");
-		$controller = new Controller();
-		$controller->setRoot(__DIR__);
-		$controller->initPath("pagina-inicial");
-		$controller->set404("erro404.php");
-		$controller->ignoreAdd();
-		$controller->includeFile("head.php");
-		$controller->includeFile("header.php");
-		$controller->setPath("inicio.php","pagina-inicial");
-		$controller->setPath("lista-produtos.php,'produtos');
-		$controller->setPath("produto.php","produto/*");
-		$controller->processPaths();
-		$controller->includeFile("footer.php");
+```php
+	include("./controller.class.php");
+	$controller = new Controller();
+	$controller->setRoot(__DIR__);
+	$controller->initPath("pagina-inicial");
+	$controller->set404	("erro404.php");
+	$controller->ignoreAdd();
+	$controller->includeFile("head.php");
+	$controller->includeFile("header.php");
+	$controller->setPath("inicio.php","pagina-inicial");
+	$controller->setPath("lista-produtos.php,'produtos');
+	$controller->setPath("produto.php","produto/*");
+	$controller->processPaths();
+	$controller->includeFile("footer.php");
+```
